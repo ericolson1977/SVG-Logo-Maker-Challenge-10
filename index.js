@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const color = require('color-name');
 const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-const generateSvg = require('./shapes.js');
+const generateSvg = require('./lib/shapes.js');
 
 //function to validate use input as a recognizable color
 function validColor(input) {
@@ -57,18 +57,17 @@ const questions = [
 // fuction to start the command line question, this also grabs the data from the generateSvg function and finally creates the logo.svg file
 function init() {
     inquirer
-    .prompt(questions)
-    .then((answers) => {
-        console.log(answers);
-        const svg = generateSvg(answers);
-        fs.writeFile('logo.svg', svg, function(error) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Generated logo.svg');
-            }
-        })
-    });
+        .prompt(questions)
+        .then((answers) => {
+            const svg = generateSvg(answers);
+            fs.writeFile('logo.svg', svg, function (error) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Generated logo.svg');
+                }
+            })
+        });
 };
 
 // call the init function

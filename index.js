@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const color = require('color-name');
 const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-const generateSvg = require('./lib/shapes.js');
+const generateSvg = require('./lib/shapesold.js');
 
 //function to validate use input as a recognizable color
 function validColor(input) {

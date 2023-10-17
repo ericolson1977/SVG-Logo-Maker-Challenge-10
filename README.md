@@ -23,7 +23,7 @@ https://github.com/ericolson1977/SVG-Logo-Maker-Challenge-10
 
 https://drive.google.com/file/d/1AeIHwstHhi5ucsSrfnablBUDsa1fJl2_/view
 
-## Contributing
+## Credits
 I used npm inquirer, npm jest, npm color and npm fs. 
 
 The test questions were provided by the instructional staff.
